@@ -29,6 +29,29 @@ code {
   min-height: 100vh;
   text-transform: uppercase;
 
+  .pixelated-grid {
+    background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 15px,
+        rgba(246, 139, 31, 0.1) 15px,
+        rgba(246, 139, 31, 0.1) 16px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 15px,
+        rgba(246, 139, 31, 0.1) 15px,
+        rgba(246, 139, 31, 0.1) 16px
+      );
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    // z-index: -1;
+  }
+
   p {
     color: white;
   }
