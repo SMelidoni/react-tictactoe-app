@@ -7,6 +7,7 @@ import GlobalButton from '../../components/global-button/global-button.component
 const SinglePlayerHome: FC = () => {
   return (
     <div className='global-page-container'>
+      <div className='pixelated-grid'></div>
       <div className='single-player-home-container'>
         <div className='single-player-home-back-button'>
           <GlobalButton label='<- Back' route='/' />
