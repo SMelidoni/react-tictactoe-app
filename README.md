@@ -8,7 +8,7 @@ This project will feature the popular game Tic-Tac-Toe which will be built using
 
 Before running the React Tic-Tac-Toe App, make sure you have the following software and tools installed on your machine:
 
-- Node.js v18.10.0 or later
+- Node.js v18.16.0 or later
 - npm (Node Package Manager) - this comes bundled with Node.js
 - Visual Studio Code (or any other code editor of your choice)
 
@@ -25,7 +25,7 @@ Note: By default, the `develop` branch will be checked out. However, if you want
 4. Start the development server: `npm start`
 5. Open your web browser and navigate to `http://localhost:3000` to see the app in action.
 
-Note: This project was developed using Node.js v18.10.0 and Visual Studio Code, but you can use any code editor of your choice.
+Note: This project was developed using Node.js v18.16.0 and Visual Studio Code, but you can use any code editor of your choice.
 
 ## Usage
 
@@ -42,7 +42,6 @@ To use the tic-tac-toe app, follow these steps:
 ### Single Player Mode (Coming Soon)
 
 The Single Player Mode is currently under development and will be available in a future update. In this mode, you will be able to play against an AI opponent with various difficulty levels, providing a challenging and enjoyable experience.
-
 
 ## Contributing
 
