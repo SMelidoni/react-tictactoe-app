@@ -1,13 +1,20 @@
-import React from 'react';
-import './App.scss';
+import React, { FC } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
+import MainMenu from './pages/main-menu/main-menu.component';
+import SinglePlayerHome from './pages/single-player-home/single-player-home.component';
+import TwoPlayerHome from './pages/two-player-home/two-player-home.component';
+
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">Tic-Tac-Toe
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<MainMenu />} />
+        <Route path='/single-player' element={<SinglePlayerHome />} />
+        <Route path='/two-player' element={<TwoPlayerHome />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
