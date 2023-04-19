@@ -1,6 +1,6 @@
 import './tic-tac-toe.styles.scss';
 
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 type Board = ('X' | 'O' | null)[];
 
@@ -19,7 +19,7 @@ const TicTacToe: React.FC<TicTacToeProps> = ({
 }) => {
   const [board, setBoard] = useState<Board>(Array(9).fill(null));
 
-  const winningLine = (board: Board) => {
+  const winningLine = useCallback((board: Board) => {
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
@@ -38,7 +38,7 @@ const TicTacToe: React.FC<TicTacToeProps> = ({
       }
     }
     return null;
-  };
+  }, []);
 
   const handleClick = (index: number): void => {
     if (board[index] || winningLine(board)) return;
@@ -49,10 +49,11 @@ const TicTacToe: React.FC<TicTacToeProps> = ({
     setIsXNext(!isXNext);
   };
 
-  const resetBoard = () => {
+  const resetBoard = useCallback(() => {
     setBoard(Array(9).fill(null));
     setIsXNext(true);
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const renderCell = (
     value: 'X' | 'O' | null,
@@ -74,13 +75,16 @@ const TicTacToe: React.FC<TicTacToeProps> = ({
     );
   };
 
-  const gameOver = () => {
+  const gameOver = useCallback(() => {
     return winningLine(board) || !board.includes(null);
-  };
+  }, [board, winningLine]);
 
-  if (gameOver()) {
-    setTimeout(resetBoard, 2000);
-  }
+  useEffect(() => {
+    if (gameOver()) {
+      const timeoutId = setTimeout(resetBoard, 2000);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [gameOver, resetBoard]);
 
   useEffect(() => {
     const result = winningLine(board);
@@ -94,7 +98,7 @@ const TicTacToe: React.FC<TicTacToeProps> = ({
       onGameOver('draw');
       handlePopup('Draw');
     }
-  }, [board, onGameOver, handlePopup]);
+  }, [board, onGameOver, handlePopup, winningLine]);
 
   return (
     <div className='tic-tac-toe-grid'>
