@@ -11,6 +11,7 @@ import TicTacToe from '../tic-tac-toe/tic-tac-toe.component';
   - Add better animation for when three match
   - Add Reset Game button
   - Add Round [i] functionality (to track how many games played)
+  - Comment code
 */
 
 const MainGameScreen: FC = () => {
