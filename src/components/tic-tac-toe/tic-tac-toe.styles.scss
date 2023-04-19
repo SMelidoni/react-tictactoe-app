@@ -1,0 +1,81 @@
+.tic-tac-toe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 8px;
+  max-width: 316px;
+  width: 100%;
+  position: relative;
+}
+
+.tic-tac-toe-grid::before,
+.tic-tac-toe-grid::after,
+.tic-tac-toe-grid > *:nth-child(3n + 1)::before,
+.tic-tac-toe-grid > *:nth-child(3n + 1)::after {
+  content: '';
+  background-color: rgba(225, 75, 75, 0.8);
+  box-shadow: 0 0 10px rgba(225, 75, 75, 0.5);
+  position: absolute;
+}
+
+.tic-tac-toe-grid::before {
+  top: 33.33%;
+  left: 0;
+  right: 0;
+  height: 8px;
+  margin-top: -4px;
+}
+
+.tic-tac-toe-grid::after {
+  left: 33.33%;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  margin-left: -4px;
+}
+
+.tic-tac-toe-grid > *:nth-child(3n + 1)::before {
+  top: 0;
+  bottom: 0;
+  left: 66.66%;
+  width: 8px;
+  margin-left: -4px;
+}
+
+.tic-tac-toe-grid > *:nth-child(3n + 1)::after {
+  left: 0;
+  right: 0;
+  top: 66.66%;
+  height: 8px;
+  margin-top: -4px;
+}
+
+.tic-tac-toe-cell {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  font-weight: bold;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.tic-tac-toe-cell.x {
+  text-shadow: 0 0 10px rgba(0, 215, 255, 0.8);
+}
+
+.tic-tac-toe-cell.o {
+  text-shadow: 0 0 10px rgba(225, 200, 45, 0.8);
+}
+
+.tic-tac-toe-cell:hover {
+  background-color: rgba(175, 0, 255, 0.3);
+}
+
+.winning-line {
+  background-color: rgba(175, 0, 255, 0.8);
+}
