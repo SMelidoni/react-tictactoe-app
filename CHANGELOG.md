@@ -1,4 +1,4 @@
-# WIP
+# v1.0.0 - 20th April 2023
 
 - Upgraded Node version from v18.10.0 to v18.16.0
 - Added Main Menu and initial page setup
