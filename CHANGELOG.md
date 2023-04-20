@@ -8,3 +8,4 @@
 - Added main game screen page layout and style (no functionality yet)
 - Added main game functionality
 - Created TODO.md file
+- Updated packages (resolved vulnerabilities)
