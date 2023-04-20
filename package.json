@@ -48,6 +48,10 @@
     ]
   },
   "devDependencies": {
+    "react-scripts": "^5.0.1",
     "sass": "^1.61.0"
+  },
+  "overrides": {
+    "@svgr/webpack": "$@svgr/webpack"
   }
 }
