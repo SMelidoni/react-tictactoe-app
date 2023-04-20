@@ -1,0 +1,96 @@
+.main-game-screen-wrapper {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-game-screen-container {
+  align-items: center;
+  border: 4px solid #ffffff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  max-width: 1400px;
+  min-width: 300px;
+  padding: 20px;
+}
+
+.main-game-screen-header {
+  color: white;
+  font-size: calc(15px + 2vmin);
+  font-weight: bold;
+  margin-bottom: 2rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 2px 2px 3px rgb(0, 255, 85, 0.7);
+}
+
+.main-game-screen-header::after {
+  background-color: rgba(0, 255, 85, 0.5);
+  bottom: -0.5rem;
+  content: '';
+  height: 0.2rem;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.main-game-screen-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.player-turn {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.tic-tac-toe-piece-x,
+.tic-tac-toe-piece-o {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+}
+
+.tic-tac-toe-piece-x {
+  text-shadow: 2px 2px 3px rgb(0, 215, 255, 0.7);
+}
+
+.tic-tac-toe-piece-x.active {
+  text-shadow: 0 0 10px rgb(0, 215, 255, 0.8);
+  text-decoration: underline;
+}
+
+.tic-tac-toe-piece-o {
+  text-shadow: 2px 2px 3px rgb(225, 200, 45, 0.7);
+}
+
+.tic-tac-toe-piece-o.active {
+  text-shadow: 0 0 10px rgba(225, 200, 45, 0.8);
+  text-decoration: underline;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.1em;
+  z-index: 1000;
+}
