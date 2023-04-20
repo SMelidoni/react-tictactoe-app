@@ -4,17 +4,6 @@ import React, { FC, useState, useCallback } from 'react';
 
 import TicTacToe from '../tic-tac-toe/tic-tac-toe.component';
 
-/*TO DO:
-  - Make more responsive (mobile and desktop)
-  - Add some sort of animation when selecting square (transform 'x' or 'o')
-  - Add redux/local storage for storing scores
-    - Add styling for scores
-  - Add better animation for when three match
-  - Add Reset Game button
-  - Add Round [i] functionality (to track how many games played)
-  - Comment code
-*/
-
 const MainGameScreen: FC = () => {
   const [isXNext, setIsXNext] = useState<boolean>(true);
   const [popupMessage, setPopupMessage] = useState<string | null>(null);

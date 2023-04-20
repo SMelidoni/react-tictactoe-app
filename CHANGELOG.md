@@ -7,3 +7,4 @@
 - Updated global background (pixelated grid) and button styles
 - Added main game screen page layout and style (no functionality yet)
 - Added main game functionality
+- Created TODO.md file
