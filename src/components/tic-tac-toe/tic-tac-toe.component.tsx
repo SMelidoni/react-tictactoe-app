@@ -57,7 +57,7 @@ const TicTacToe: React.FC<TicTacToeProps> = ({
 
   const renderCell = (
     value: 'X' | 'O' | null,
-    index: number
+    index: number,
   ): React.ReactNode => {
     const winLine = winningLine(board)?.line || [];
     const winningCell = winLine.includes(index);
