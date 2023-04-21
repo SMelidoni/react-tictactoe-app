@@ -21,7 +21,7 @@ const MainGameScreen: FC = () => {
         handlePopup(null);
       }, 3000);
     },
-    [handlePopup]
+    [handlePopup],
   );
 
   return (

@@ -11,19 +11,19 @@ interface GlobalButtonProps {
 const GlobalButton: FC<GlobalButtonProps> = ({ label, route }) => {
   const retroBackLabel = (
     <>
-      <span className="global-button-arrow">←</span>
-      <span className="global-button-text">Back</span>
+      <span className='global-button-arrow'>←</span>
+      <span className='global-button-text'>Back</span>
     </>
   );
 
   return (
-    <div className="global-button-container">
+    <div className='global-button-container'>
       {route ? (
-        <Link to={route} className="global-button">
+        <Link to={route} className='global-button'>
           {label === '<- Back' ? retroBackLabel : label}
         </Link>
       ) : (
-        <div className="global-button">
+        <div className='global-button'>
           {label === '<- Back' ? retroBackLabel : label}
         </div>
       )}
