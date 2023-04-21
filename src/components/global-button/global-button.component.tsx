@@ -9,6 +9,7 @@ interface GlobalButtonProps {
 }
 
 const GlobalButton: FC<GlobalButtonProps> = ({ label, route }) => {
+  // If the label is '<- Back', display an arrow and 'Back' text with custom styling
   const retroBackLabel = (
     <>
       <span className='global-button-arrow'>←</span>

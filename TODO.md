@@ -10,7 +10,7 @@
 - [ ] Make page more responsive (mobile and desktop)
 - [ ] Add styling for scores
 - [ ] Add 'Reset Game' button
-- [ ] Comment code
+- [x] Comment code
 - [ ] Refactor SCSS
 
 # Ideas
