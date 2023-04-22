@@ -26,7 +26,7 @@
   position: relative;
   text-align: center;
   text-decoration: none;
-  text-shadow: 2px 2px 3px rgb(0, 255, 85, 0.7);
+  text-shadow: 2px 2px 3px rgba(0, 255, 85, 0.7);
 }
 
 .main-game-screen-header::after {
@@ -64,16 +64,16 @@
 }
 
 .tic-tac-toe-piece-x {
-  text-shadow: 2px 2px 3px rgb(0, 215, 255, 0.7);
+  text-shadow: 2px 2px 3px rgba(0, 215, 255, 0.7);
 }
 
 .tic-tac-toe-piece-x.active {
-  text-shadow: 0 0 10px rgb(0, 215, 255, 0.8);
+  text-shadow: 0 0 10px rgba(0, 215, 255, 0.8);
   text-decoration: underline;
 }
 
 .tic-tac-toe-piece-o {
-  text-shadow: 2px 2px 3px rgb(225, 200, 45, 0.7);
+  text-shadow: 2px 2px 3px rgba(225, 200, 45, 0.7);
 }
 
 .tic-tac-toe-piece-o.active {

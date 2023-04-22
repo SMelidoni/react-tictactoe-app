@@ -11,7 +11,7 @@
 - [ ] Add styling for scores
 - [ ] Add 'Reset Game' button
 - [x] Comment code
-- [ ] Refactor SCSS
+- [x] Refactor SCSS
 
 # Ideas
 
