@@ -4,7 +4,11 @@ import React, { FC, useState, useCallback } from 'react';
 
 import TicTacToe from '../tic-tac-toe/tic-tac-toe.component';
 
-const MainGameScreen: FC = () => {
+interface MainGameScreenProps {
+  updateScores: (winner: 'X' | 'O' | 'draw') => void;
+}
+
+const MainGameScreen: FC<MainGameScreenProps> = ({ updateScores }) => {
   // State to keep track of the current player's turn (X or O)
   const [isXNext, setIsXNext] = useState<boolean>(true);
 
@@ -21,14 +25,14 @@ const MainGameScreen: FC = () => {
 
   const handleGameOver = useCallback(
     (winner: 'X' | 'O' | 'draw') => {
-      console.log('Game Over. Winner:', winner);
+      updateScores(winner);
       // Increment the round number
       setRound((prevRound) => prevRound + 1);
       setTimeout(() => {
         handlePopup(null);
       }, 3000);
     },
-    [handlePopup],
+    [handlePopup, updateScores],
   );
 
   return (
