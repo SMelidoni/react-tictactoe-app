@@ -2,6 +2,8 @@ import './tic-tac-toe.styles.scss';
 
 import React, { useCallback, useEffect, useState } from 'react';
 
+import useGameResult from '../../hooks/use-game-result';
+
 type Board = ('X' | 'O' | null)[];
 
 type TicTacToeProps = {
@@ -11,64 +13,47 @@ type TicTacToeProps = {
   handlePopup: (message: string | null) => void;
 };
 
-// TicTacToe component is responsible for rendering the tic-tac-toe grid and handling game logic
 const TicTacToe: React.FC<TicTacToeProps> = ({
   onGameOver,
   isXNext,
   setIsXNext,
   handlePopup,
 }) => {
-  // State to store the current state of the game board
+  // Initialize the game board state
   const [board, setBoard] = useState<Board>(Array(9).fill(null));
 
-  // Function to check if there's a winning line on the board
-  const winningLine = useCallback((board: Board) => {
-    // An array of possible winning line combinations.
-    // Each sub-array contains three indices that form a winning line on the board.
-    const lines = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6],
-    ];
+  // Use a custom hook to determine the game result
+  const { winningLine, resetGameResult } = useGameResult(
+    board,
+    onGameOver,
+    handlePopup,
+  );
 
-    for (let line of lines) {
-      // Destructure the three indices that form a winning line from the current `line` sub-array.
-      const [a, b, c] = line;
-
-      // Check if there's a winning line:
-      // - `board[a]` checks if the cell at index `a` has been marked (is not null).
-      // - `board[a] === board[b] && board[a] === board[c]` checks if the cells at indices `a`, `b`, and `c` have the same mark (either 'X' or 'O').
-      if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-        // A winning line is found; return an object containing the winner and the winning line.
-        return { winner: board[a], line };
+  // Handle clicks on the board cells
+  const handleClick = useCallback(
+    (index: number) => {
+      // If cell is not empty or game is already over, do nothing
+      if (board[index] !== null || winningLine(board) !== null) {
+        return;
       }
-    }
-    return null;
-  }, []);
 
-  // Function to handle clicks on the tic-tac-toe grid
-  const handleClick = (index: number): void => {
-    if (board[index] || winningLine(board)) return;
+      // Create a new board with the clicked cell updated
+      const newBoard = [...board];
+      newBoard[index] = isXNext ? 'X' : 'O';
+      setBoard(newBoard);
+      setIsXNext(!isXNext);
+    },
+    [board, isXNext, winningLine, setIsXNext],
+  );
 
-    const newBoard = board.slice();
-    newBoard[index] = isXNext ? 'X' : 'O';
-    setBoard(newBoard);
-    setIsXNext(!isXNext);
-  };
-
-  // Function to reset the game board
+  // Reset the board state
   const resetBoard = useCallback(() => {
     setBoard(Array(9).fill(null));
     setIsXNext(true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    resetGameResult();
+  }, [setIsXNext, resetGameResult]);
 
-  // Function to render a single cell of the tic-tac-toe grid
+  // Render each cell of the board
   const renderCell = (
     value: 'X' | 'O' | null,
     index: number,
@@ -89,33 +74,17 @@ const TicTacToe: React.FC<TicTacToeProps> = ({
     );
   };
 
-  const gameOver = useCallback(() => {
-    return winningLine(board) || !board.includes(null);
-  }, [board, winningLine]);
-
-  // Checks if the game is over, and if so, resets the board after a 2s delay.
+  // Check if the game is over and reset the board after 2 seconds
   useEffect(() => {
-    if (gameOver()) {
+    const isGameOver = winningLine(board) || !board.includes(null);
+
+    if (isGameOver) {
       const timeoutId = setTimeout(resetBoard, 2000);
       return () => clearTimeout(timeoutId);
     }
-  }, [gameOver, resetBoard]);
+  }, [board, resetBoard, winningLine]);
 
-  //Handles displaying the game result and calling the `onGameOver` callback.
-  useEffect(() => {
-    const result = winningLine(board);
-    if (result) {
-      const { winner } = result;
-      if (winner !== null) {
-        onGameOver(winner);
-        handlePopup(`${winner} WINS`);
-      }
-    } else if (board.filter((cell) => cell !== null).length === 9) {
-      onGameOver('draw');
-      handlePopup('Draw');
-    }
-  }, [board, onGameOver, handlePopup, winningLine]);
-
+  // Render the game board
   return (
     <div className='tic-tac-toe-grid'>
       {board.map((cell, index) => renderCell(cell, index))}

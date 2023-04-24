@@ -3,6 +3,7 @@
 - Added Prettier config file
 - Added detailed comments where necessary
 - Refactored SCSS files
+- Added score board functionality with styling
 
 # v1.0.0 - 20th April 2023
 
