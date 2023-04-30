@@ -4,6 +4,7 @@
 - Added detailed comments where necessary
 - Refactored SCSS files
 - Added score board functionality with styling
+- Added page transition animation (framer motion)
 
 # v1.0.0 - 20th April 2023
 
