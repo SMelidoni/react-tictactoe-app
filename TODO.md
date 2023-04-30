@@ -3,15 +3,17 @@
 ## High Priority
 
 - [ ] Add animation when selecting square, smoother transitions (transform 'x' or 'o')
-- [ ] Set up a Redux store for state management (score storing)
+- [ ] Update three match colours
+- [x] Add score board functionality
 
 ## Low Priority
 
 - [ ] Make page more responsive (mobile and desktop)
-- [ ] Add styling for scores
+- [x] Add styling for scores
 - [ ] Add 'Reset Game' button
-- [ ] Comment code
-- [ ] Refactor SCSS
+- [ ] Set up a Redux store for state management (score storing)
+- [x] Comment code
+- [x] Refactor SCSS
 
 # Ideas
 

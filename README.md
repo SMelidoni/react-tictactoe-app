@@ -1,8 +1,8 @@
 # React Tic-Tac-Toe App
 
-## Currently WIP
+<img src="./assets/images/tic-tac-toe.png" alt="React Tic-Tac-Toe App Preview" width="30%">
 
-This project will feature the popular game Tic-Tac-Toe which will be built using React. It will allow users to play this game with 2 players. Single player will not be available as part of the first release, but is in the pipeline once 2 player mode is complete.
+This project features the popular game Tic-Tac-Toe which has been built using React. It currently allows users to play this game with 2 players. Single player will not be available as part of the first release, but is in the pipeline once 2 player mode is complete.
 
 ## Prerequisites
 
@@ -37,7 +37,7 @@ To use the tic-tac-toe app, follow these steps:
 2. Player 1 (X) and Player 2 (O) will take turns selecting an empty cell on the grid.
 3. To make a move, click on the desired empty cell.
 4. The game will continue until one player wins by aligning three of their symbols (X or O) in a row, column, or diagonal, or until the board is full and the game ends in a draw.
-5. At the end of the game, the app will display the result (win, lose, or draw) and provide an option to restart the game or return to the main menu.
+5. At the end of the game, the app will display the result (win, lose, or draw) and reward the winner with one point. A new round will then begin.
 
 ### Single Player Mode (Coming Soon)
 
