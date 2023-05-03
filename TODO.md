@@ -5,6 +5,7 @@
 - [ ] Add animation when selecting square, smoother transitions (transform 'x' or 'o')
 - [ ] Update three match colours
 - [x] Add score board functionality
+- [ ] Center `Back` button arrow (style)
 
 ## Low Priority
 
