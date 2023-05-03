@@ -1,6 +1,6 @@
 import './two-player-home.styles.scss';
 
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import GlobalButton from '../../components/global-button/global-button.component';
 import MainGameScreen from '../../components/main-game-screen/main-game-screen.component';
@@ -9,6 +9,21 @@ import ScoreBoard from '../../components/score-board/score-board.component';
 const TwoPlayerHome: FC = () => {
   const [xScore, setXScore] = useState(0);
   const [oScore, setOScore] = useState(0);
+  const [popupMessage, setPopupMessage] = useState<string | null>(null);
+
+  const resetGame = () => {
+    setPopupMessage('Game Resetting');
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
+  };
+
+  useEffect(() => {
+    if (popupMessage) {
+      const timeoutId = setTimeout(() => setPopupMessage(null), 3000);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [popupMessage]);
 
   const updateScores = (winner: 'X' | 'O' | 'draw') => {
     if (winner === 'X') {
@@ -22,6 +37,14 @@ const TwoPlayerHome: FC = () => {
     <div className='global-page-container'>
       <div className='pixelated-grid'></div>
       <div className='two-player-home-container'>
+        {popupMessage && (
+          <div className='popup'>
+            {popupMessage}
+            <span className='popup-dot'>.</span>
+            <span className='popup-dot'>.</span>
+            <span className='popup-dot'>.</span>
+          </div>
+        )}
         <div className='two-player-home-back-button'>
           <GlobalButton label='<- Back' route='/' />
         </div>
@@ -33,6 +56,7 @@ const TwoPlayerHome: FC = () => {
         </div>
         <div className='two-player-home-content'>
           <MainGameScreen updateScores={updateScores} />
+          <GlobalButton label='Reset Game' onClick={resetGame} />
         </div>
       </div>
     </div>

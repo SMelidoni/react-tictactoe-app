@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 
 interface GlobalButtonProps {
   label: string;
-  route: string;
+  route?: string;
+  onClick?: () => void;
 }
 
-const GlobalButton: FC<GlobalButtonProps> = ({ label, route }) => {
+const GlobalButton: FC<GlobalButtonProps> = ({ label, route, onClick }) => {
   // If the label is '<- Back', display an arrow and 'Back' text with custom styling
   const retroBackLabel = (
     <>
@@ -24,7 +25,7 @@ const GlobalButton: FC<GlobalButtonProps> = ({ label, route }) => {
           {label === '<- Back' ? retroBackLabel : label}
         </Link>
       ) : (
-        <div className='global-button'>
+        <div className='global-button' onClick={onClick}>
           {label === '<- Back' ? retroBackLabel : label}
         </div>
       )}
