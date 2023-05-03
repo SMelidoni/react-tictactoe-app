@@ -10,7 +10,7 @@
 
 - [ ] Make page more responsive (mobile and desktop)
 - [x] Add styling for scores
-- [ ] Add 'Reset Game' button
+- [x] Add 'Reset Game' button
 - [ ] Set up a Redux store for state management (score storing)
 - [x] Comment code
 - [x] Refactor SCSS

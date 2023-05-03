@@ -1,3 +1,7 @@
+# WIP
+
+- Added 'Reset Game' button
+
 # v1.1.0 - 30th April 2023
 
 - Added Prettier config file
