@@ -1,6 +1,7 @@
 # WIP
 
 - Added 'Reset Game' button
+- Centered 'Back' button arrow
 
 # v1.1.0 - 30th April 2023
 
