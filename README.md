@@ -1,4 +1,4 @@
-# React Tic-Tac-Toe App
+# React Tic-Tac-Toe App 🎲
 
 <img src="./assets/images/tic-tac-toe.png" alt="React Tic-Tac-Toe App Preview" width="30%">
 
@@ -16,16 +16,33 @@ Before running the React Tic-Tac-Toe App, make sure you have the following softw
 
 To install and run the React Tic-Tac-Toe App, follow these steps:
 
-1. Clone this repository to your local machine: `git clone https://github.com/SMelidoni/react-tictactoe-app.git`
+1. Clone the repository from the `main` branch to your local machine:
+
+```sh
+git clone https://github.com/SMelidoni/react-tictactoe-app.git
+```
 
 Note: By default, the `develop` branch will be checked out. However, if you want to use the most stable version, please check out the `main` branch by running: `git checkout main`
 
-2. Navigate into the project directory: `cd react-tictactoe-app`
-3. Install the dependencies using npm: `npm install`
-4. Start the development server: `npm start`
-5. Open your web browser and navigate to `http://localhost:3000` to see the app in action.
+2. Navigate into the project directory:
 
-Note: This project was developed using Node.js v18.16.0 and Visual Studio Code, but you can use any code editor of your choice.
+```sh
+cd react-tictactoe-app
+```
+
+3. Install the dependencies:
+
+```sh
+npm install
+```
+
+4. Run the application:
+
+```sh
+npm start
+```
+
+You can then access the application by opening your web browser and navigating to `http://localhost:3000`.
 
 ## Usage
 
@@ -47,16 +64,11 @@ The Single Player Mode is currently under development and will be available in a
 
 If you would like to contribute to this project, please follow these steps:
 
-1. Fork this repository to your own GitHub account.
-2. Create a new branch with a descriptive name
-3. Make the desired changes to the code.
-4. Test your changes to ensure they work as expected.
-5. Submit a pull request to this repository with a description of your changes.
+1. Fork the repository
+2. Create a new feature branch `git checkout -b feature/new-feature`
+3. Make your changes
+4. Commit your changes: `git commit -am 'Add some feature'`
+5. Push the branch: `git push origin feature/new-feature`
+6. Submit a pull request
 
-<!--
-
-## Acknowledgments
-
-This project was inspired by [this tutorial](https://www.google.com). Thanks to the author for their helpful guidance!
-
--->
+Thank you for checking out the React Tic-Tac-Toe App!
